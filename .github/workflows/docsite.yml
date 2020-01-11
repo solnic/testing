@@ -8,7 +8,8 @@ on:
       - docsite/**
       - .github/workflows/docsite.yml
     branches:
-      - gha-testing
+      - master
+      - release-**
     tags:
 
 jobs:
