@@ -37,9 +37,9 @@ jobs:
         run: mkdir -p bin && ln -sf "$(bundle show ossy)/bin/ossy" bin/ossy
       - name: Update release branches
         run: |
-          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
+          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep -o "docsite:release-"`
 
-          if [ ! -z "$(echo $branches | tr -d '\n')" ]; then
+          if [ ! -z $branches ]; then
             for b in $branches
             do
               name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
