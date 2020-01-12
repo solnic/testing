@@ -39,7 +39,7 @@ jobs:
         run: |
           branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
 
-          if [ ! -z "$branches" ]; then
+          if [ ! -z $(echo $branches | -d '\n') ]; then
             for b in $branches
             do
               name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
