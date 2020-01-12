@@ -35,9 +35,9 @@ jobs:
           git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"
       - name: Update release branches
         run: |
-          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
+          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-" || echo "nothing"`
 
-          if [ ! -z $branches ]; then
+          if [ ! $branches -eq "nothing" ]; then
             for b in $branches
             do
               name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
