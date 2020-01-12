@@ -33,17 +33,18 @@ jobs:
           bundle install --jobs 4 --retry 3 --without benchmarks sql
       - name: Symlink ossy
         run: mkdir -p bin && ln -sf "$(bundle show ossy)/bin/ossy" bin/ossy
-      - name: Checkout test
-        run: |
-          git checkout --progress --force -B release-0.1 refs/remotes/origin/release-0.1
       - name: Update release branches
         run: |
-          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-" | cut -d : -f 2`
+          branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
 
           if [ ! -z "$branches" ]; then
             for b in $branches
             do
-              git checkout --progress --force -B $b refs/remotes/origin/$b
+              name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1]'`
+
+              echo "checking out $name"
+
+              git checkout --progress --force -B $name refs/remotes/origin/$name
               git cherry-pick $GITHUB_SHA -m 1
             done
 
