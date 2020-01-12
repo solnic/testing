@@ -39,10 +39,12 @@ jobs:
         run: |
           branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
 
-          if [ ! -z "$(echo $branches | ruby -e 'puts gets.chomp')" ]; then
+          if [ ! -z $branches ]; then
             for b in $branches
             do
               name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
+
+              [ -z $b ] && break
 
               echo "merging $GITHUB_SHA to $name"
 
