@@ -42,7 +42,7 @@ jobs:
           if [ ! -z "$branches" ]; then
             for b in $branches
             do
-              name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1]'`
+              name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
 
               echo "checking out $name"
 
