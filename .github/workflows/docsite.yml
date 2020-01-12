@@ -37,16 +37,14 @@ jobs:
         run: |
           branches=`git log --format=%B -n 1 $GITHUB_SHA | grep "docsite:release-"`
 
-          echo $branches
-
           if [ ! -z "$branches" ]; then
             for b in $branches
             do
               name=`echo $b | ruby -e 'puts gets[/:(.+)/, 1].gsub(/\s+/, "")'`
 
-              echo "checking out $name"
+              echo "merging $GITHUB_SHA to $name"
 
-              git checkout --progress --force -B $name refs/remotes/origin/$name
+              git checkout $name --track origin/$name
               git cherry-pick $GITHUB_SHA -m 1
             done
 
