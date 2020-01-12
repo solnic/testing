@@ -45,6 +45,9 @@ jobs:
               echo "merging $GITHUB_SHA to $name"
 
               git checkout -b $name --track origin/$name
+
+              echo `git log -n 1`
+
               git cherry-pick $GITHUB_SHA -m 1
             done
 
