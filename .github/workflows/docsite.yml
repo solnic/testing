@@ -48,7 +48,7 @@ jobs:
 
               echo `git log -n 1`
 
-              git cherry-pick $GITHUB_SHA -m 1
+              git cherry-pick $GITHUB_SHA
             done
 
             git push --all "https://dry-bot:${{secrets.GH_PAT}}@github.com/$GITHUB_REPOSITORY.git"
