@@ -8,5 +8,4 @@
 /pkg/
 /spec/reports/
 /tmp/
-bin/ossy
-
+bin/*
