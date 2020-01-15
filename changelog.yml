@@ -1,0 +1,8 @@
+- version: 0.1.0
+  summary: This is just a test
+  fixed:
+    - a whole bunch of bugs
+  added:
+    - a whole bunch of features
+  changed:
+    - totally everything
