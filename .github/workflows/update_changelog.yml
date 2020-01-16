@@ -33,7 +33,7 @@ jobs:
         run: |
           msg=`git log --format=%B -n 1`
 
-          if [[ ! -e `echo $msg | (grep -p "Merge pull request" && grep -p "\[changelog\]")` ]]; then
+          if [[ ! -e `echo $msg | (grep "Merge pull request" && grep "\[changelog\]")` ]]; then
             changelog=`echo "$msg" | grep -v 'Merge pull request' | grep -ve '^$' | grep -v "\[changelog\]"`
 
             echo "Adding the follow entries:"
