@@ -5,6 +5,8 @@
   fixed:
   - all the things
   - test
+  - Use GITHUB_SHA rather than GITHUB_REF when updating changelog
+  - Also, test it again
   added:
   - test
   changed:
