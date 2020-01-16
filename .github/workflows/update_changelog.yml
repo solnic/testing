@@ -33,7 +33,7 @@ jobs:
         run: |
           msg=`git log --format=%B -n 1`
 
-          if [[ ! -e `echo $msg | (grep "Merge pull request" && grep "\[changelog\]")` ]]; then
+          if [[ "$msg" == *"Merge pull request"* && "$msg" == *"[changelog]"* ]]; then
             changelog=`echo "$msg" | grep -v 'Merge pull request' | grep -ve '^$' | grep -v "\[changelog\]"`
 
             echo "Adding the follow entries:"
@@ -44,7 +44,7 @@ jobs:
             git add changelog.yml
             git commit -m "[devtools] update changelog.yml from $GITHUB_REF"
           else
-            echo "No need to update changelog"
+            echo "no need to update changelog"
           fi
       - name: Push changes
         uses: ad-m/github-push-action@master
