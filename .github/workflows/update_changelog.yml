@@ -42,7 +42,7 @@ jobs:
             bundle exec bin/ossy ch u changelog.yml "$changelog"
 
             git add changelog.yml
-            git commit -m "[devtools] update changelog.yml from $GITHUB_REF"
+            git commit -m "[devtools] update changelog.yml from $GITHUB_SHA"
           else
             echo "no need to update changelog"
           fi
