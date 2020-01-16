@@ -1,8 +1,14 @@
+---
 - version: 0.2.2
   date: 2020-01-15
   summary: How about another test?
   fixed:
-    - all the things
+  - all the things
+  - test
+  added:
+  - test
+  changed:
+  - test
 - version: 0.2.1
   date: 2020-01-10
   summary: One more test
@@ -10,14 +16,13 @@
   date: 2020-01-05
   summary: Another test
   fixed:
-    - just one thing
+  - just one thing
 - version: 0.1.0
   date: 2020-01-01
-  summary: One more test
   summary: This is just a test
   fixed:
-    - a whole bunch of bugs
+  - a whole bunch of bugs
   added:
-    - a whole bunch of features
+  - a whole bunch of features
   changed:
-    - totally everything
+  - totally everything
