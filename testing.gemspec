@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'dry/testing/version'
+
 Gem::Specification.new do |spec|
   spec.name          = 'dry-testing'
-  spec.version       = '0.1'
+  spec.version       = Dry::Testing::VERSION
   spec.authors       = ['Piotr Solnica']
   spec.email         = ['piotr.solnica@gmail.com']
   spec.license       = 'MIT'
