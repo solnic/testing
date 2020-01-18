@@ -8,15 +8,15 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.event_name == 'repository_dispatch'
+    if: github.event_name == 'repository_dispatch' && github.event.action == 'release'
     env:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
       GEM_HOST_API_KEY: ${{secrets.GEM_HOST_API_KEY}}
     steps:
-      - name: Debug
-        run: echo "${{toJSON(github.event)}}"
       - uses: actions/checkout@v2
+        with:
+          ref: refs/tags/${{github.event.client_payload.tag}}
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
         with:
