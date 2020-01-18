@@ -8,19 +8,18 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: contains(github.ref, 'tags')
     env:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
       RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-      RELEASE_COMMAND: "gem release"
     steps:
       - uses: actions/checkout@v2
-      - name: Debug
-        run: |
-          echo $GITHUB_REF
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
         with:
           ruby-version: 2.6
+      - name: Install dependencies
+        run: gem install gem-release
       - name: Publish to Rubygems
-        uses: cadwallion/publish-rubygems-action@v1.0.0
+        run: gem release
