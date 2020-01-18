@@ -1,0 +1,31 @@
+# this file is managed by dry-rb/devtools project
+
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Ruby
+        uses: eregon/use-ruby-action@master
+        with:
+          ruby-version: 2.6
+      - name: Bundle
+        run: bundle install
+      - name: Symlink ossy
+        run: |
+          ln -sf "$(bundle info ossy --path)/bin/ossy" bin/oss
+      - name: Run all tests
+        run: |
+          echo "all good"
+      - name: Trigger release workflow
+        if: contains(github.ref, 'tags')
+        run: |
+          tag=$(echo "refs/tags/v1.0.0" | cut -d / -f 3)
+          bundle exec bin/ossy gh w $GITHUB_REPOSITORY release --payload "{'tag':'$tag'}"
