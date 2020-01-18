@@ -8,7 +8,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: contains('tags', github.ref)
     env:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
@@ -16,6 +15,9 @@ jobs:
       RELEASE_COMMAND: "gem release"
     steps:
       - uses: actions/checkout@v2
+      - name: Debug
+        run: |
+          echo $GITHUB_REF
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
         with:
