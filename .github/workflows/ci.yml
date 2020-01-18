@@ -22,7 +22,7 @@ jobs:
           bundle install
       - name: Symlink ossy
         run: |
-          ln -sf "$(bundle info ossy --path)/bin/ossy" bin/oss
+          ln -sf "$(bundle info ossy --path)/bin/ossy" bin/ossy
       - name: Run all tests
         run: |
           echo "all good"
@@ -30,4 +30,4 @@ jobs:
         if: contains(github.ref, 'tags')
         run: |
           tag=$(echo "refs/tags/v1.0.0" | cut -d / -f 3)
-          bin/ossy gh w $GITHUB_REPOSITORY release --payload "{'tag':'$tag'}"
+          bundle exec bin/ossy gh w $GITHUB_REPOSITORY release --payload "{'tag':'$tag'}"
