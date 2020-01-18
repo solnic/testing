@@ -1,0 +1,24 @@
+# this file is managed by dry-rb/devtools project
+
+name: release
+
+on:
+  create:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: contains('tags', '${{github.ref}}')
+    env:
+      GITHUB_LOGIN: dry-bot
+      GITHUB_TOKEN: ${{secrets.GH_PAT}}
+      RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+      RELEASE_COMMAND: "gem release"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+      - uses: eregon/use-ruby-action@master
+        with:
+          ruby-version: 2.6
+      - name: Publish to Rubygems
+        uses: cadwallion/publish-rubygems-action@v1.0.0
