@@ -3,12 +3,12 @@
 name: release
 
 on:
-  create:
+  repository_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'tags')
+    if: github.event_name == 'repository_dispatch' || github.event.event_type == 'release'
     env:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
