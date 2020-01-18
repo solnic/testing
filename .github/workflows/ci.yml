@@ -32,5 +32,5 @@ jobs:
       - name: Trigger release workflow
         if: contains(github.ref, 'tags')
         run: |
-          tag=$(echo "refs/tags/v1.0.0" | cut -d / -f 3)
+          tag=$(echo $GITHUB_REF | cut -d / -f 3)
           bundle exec bin/ossy gh w $GITHUB_REPOSITORY release --payload "{\"tag\":\"$tag\"}"
