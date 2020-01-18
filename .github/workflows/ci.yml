@@ -15,6 +15,7 @@ jobs:
       - name: Run all tests
         run: echo "all good"
   release:
+    runs-on: ubuntu-latest
     if: contains(github.ref, 'tags')
     needs: tests
     env:
