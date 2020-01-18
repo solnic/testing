@@ -15,7 +15,7 @@ jobs:
       GEM_HOST_API_KEY: ${{secrets.GEM_HOST_API_KEY}}
     steps:
       - name: Debug
-        run: echo "${{toJSON(github.event.client_payload)}}"
+        run: echo "${{toJSON(github.event)}}"
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
