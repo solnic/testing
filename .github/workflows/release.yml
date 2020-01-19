@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: |
           gem install gem-release
+      - name: Symlink ossy
+        run: |
+          ln -sf "$(bundle info ossy --path)/bin/ossy" bin/ossy
       - name: Set up gem credentials
         run: |
           mkdir -p ~/.gem
