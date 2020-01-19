@@ -23,7 +23,7 @@ jobs:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
         with:
