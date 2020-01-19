@@ -33,4 +33,4 @@ jobs:
           chmod 0600 ~/.gem/credentials
       - name: Publish to Rubygems
         run: |
-          bundle exec bin/ossy github membership $RELEASE_CREATOR dry-rb core && gem release
+          bin/ossy github membership $RELEASE_CREATOR dry-rb core && gem release
