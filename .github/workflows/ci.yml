@@ -4,8 +4,8 @@ name: ci
 
 on:
   push:
-    paths:
-      - "*.yml"
+    branches:
+      - "master"
   create:
 
 jobs:
