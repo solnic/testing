@@ -23,6 +23,9 @@ jobs:
         uses: eregon/use-ruby-action@master
         with:
           ruby-version: 2.6
+      - name: Install latest bundler
+        run: |
+          gem install bundler
       - name: Install dependencies
         run: |
           gem install gem-release
@@ -36,4 +39,4 @@ jobs:
           chmod 0600 ~/.gem/credentials
       - name: Publish to Rubygems
         run: |
-          bin/ossy github membership $RELEASE_CREATOR dry-rb core && gem release
+          bundle exec bin/ossy github membership $RELEASE_CREATOR dry-rb core && gem release
