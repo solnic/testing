@@ -23,20 +23,23 @@ jobs:
         uses: eregon/use-ruby-action@master
         with:
           ruby-version: 2.6
+      - name: Set up gem credentials
+        run: |
+          mkdir -p ~/.gem
+          echo ":rubygems_api_key: $GEM_HOST_API_KEY" > ~/.gem/credentials
+          chmod 0600 ~/.gem/credentials
       - name: Install latest bundler
         run: |
           gem install bundler
       - name: Install dependencies
         run: |
           gem install gem-release
+      - name: Bundle
+        run: |
+          bundle install
       - name: Symlink ossy
         run: |
           ln -sf "$(bundle info ossy --path)/bin/ossy" bin/ossy
-      - name: Set up gem credentials
-        run: |
-          mkdir -p ~/.gem
-          echo ":rubygems_api_key: $GEM_HOST_API_KEY" > ~/.gem/credentials
-          chmod 0600 ~/.gem/credentials
       - name: Publish to Rubygems
         run: |
           bundle exec bin/ossy github membership $RELEASE_CREATOR dry-rb core && gem release
