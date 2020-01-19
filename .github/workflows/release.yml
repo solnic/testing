@@ -13,14 +13,12 @@ jobs:
       GITHUB_LOGIN: dry-bot
       GITHUB_TOKEN: ${{secrets.GH_PAT}}
       GEM_HOST_API_KEY: ${{secrets.GEM_HOST_API_KEY}}
-      RELEASE_REPO: ${{github.event.client_payload.repo}}
-      RELEASE_TAG: ${{github.event.client_payload.tag}}
       RELEASE_CREATOR: ${{github.event.client_payload.tag_creator}}
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: $RELEASE_REPO
-          ref: refs/tags/$RELEASE_TAG
+          repository: ${{github.event.client_payload.repo}}
+          ref: refs/tags/${{github.event.client_payload.tag}}
       - name: Set up Ruby
         uses: eregon/use-ruby-action@master
         with:
