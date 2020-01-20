@@ -5,10 +5,9 @@ name: ci
 on:
   push:
     paths:
-      - ".github/workflow/ci.yml"
+      - ".github/workflows/ci.yml"
     branches:
       - "master"
-  create:
 
 jobs:
   tests:
