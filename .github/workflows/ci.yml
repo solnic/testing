@@ -4,6 +4,8 @@ name: ci
 
 on:
   push:
+    paths:
+      - ".github/workflow/ci.yml"
     branches:
       - "master"
   create:
