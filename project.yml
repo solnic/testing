@@ -4,3 +4,5 @@ gemspec:
   authors: ["Piotr Solnica"]
   email: ["piotr.solnica@gmail.com"]
   summary: "this is a gem that is used for testing purposes only - do not install it, do not use it"
+  development_dependencies:
+    - ['rake', '~> 13.0']
