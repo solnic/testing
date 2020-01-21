@@ -1,2 +1,6 @@
-name: testing
-codacy_id: secret
+name: dry-testing
+codacy_id: codacy-id
+gemspec:
+  authors: ["Piotr Solnica"]
+  email: ["piotr.solnica@gmail.com"]
+  summary: "this is a gem that is used for testing purposes only - do not install it, do not use it"
