@@ -23,6 +23,10 @@ How about another test?
 
 One more test
 
+### Fixed
+
+- just testing
+
 
 [Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-testing/compare/v0.2.0...v0.2.1)
 
