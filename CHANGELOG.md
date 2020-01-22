@@ -1,3 +1,13 @@
+## 1.0.0 
+
+
+### Added
+
+- All the features
+
+
+[Compare v0.2.2...master](https://github.com/dry-rb/dry-testing/compare/v0.2.2...master)
+
 ## 0.2.2 2020-01-15
 
 How about another test?
