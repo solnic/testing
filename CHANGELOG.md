@@ -1,12 +1,24 @@
-## 1.0.0 
+## 1.0.0 2020-01-22
 
+let's release it
 
 ### Added
 
 - All the features
 
 
-[Compare v0.2.2...master](https://github.com/dry-rb/dry-testing/compare/v0.2.2...master)
+[Compare v1.0.0...v1.0.0](https://github.com/dry-rb/dry-testing/compare/v1.0.0...v1.0.0)
+
+## 1.0.0 2020-01-22
+
+let's release it
+
+### Added
+
+- All the features
+
+
+[Compare v0.2.2...v1.0.0](https://github.com/dry-rb/dry-testing/compare/v0.2.2...v1.0.0)
 
 ## 0.2.2 2020-01-15
 
