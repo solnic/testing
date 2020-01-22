@@ -36,7 +36,9 @@ jobs:
           gem install bundler
           bundle config set without 'test tools benchmarks docs'
       - name: Install dependencies
-        run: gem install ossy
+        run: bundle install --jobs 4 --retry 3
+      - name: Symlink ossy
+        run: bundle binstubs ossy
       - name: Compile file templates
         run: tmp/devtools/bin/compile-templates $GITHUB_REPOSITORY
       - name: Update workflow files from devtools
@@ -49,6 +51,7 @@ jobs:
         run: tmp/devtools/bin/compile-changelog
       - name: Commit
         run: |
+          rm bin/ossy
           git add -A
           git commit -m "[devtools] sync configs" || echo "nothing to commit"
       - name: Push changes
