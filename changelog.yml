@@ -1,4 +1,7 @@
 ---
+- added:
+  - All the features
+  version: 1.0.0
 - version: 0.2.2
   date: 2020-01-15
   summary: How about another test?
