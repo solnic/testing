@@ -1,3 +1,13 @@
+## 1.0.1 2020-02-10
+
+
+### Fixed
+
+- all the things
+
+
+[Compare v1.0.0...v1.0.1](https://github.com/dry-rb/dry-testing/compare/v1.0.0...v1.0.1)
+
 ## 1.0.0 2020-01-22
 
 let's release it
