@@ -6,7 +6,7 @@
 - all the things
 
 
-[Compare v1.0.0...v1.0.1](https://github.com/dry-rb/dry-testing/compare/v1.0.0...v1.0.1)
+[Compare v1.0.0...v1.0.1](https://github.com/dry-rb/dry-testing-testing/compare/v1.0.0...v1.0.1)
 
 ## 1.0.0 2020-01-22
 
@@ -17,7 +17,7 @@ let's release it
 - All the features
 
 
-[Compare v1.0.0...v1.0.0](https://github.com/dry-rb/dry-testing/compare/v1.0.0...v1.0.0)
+[Compare v1.0.0...v1.0.0](https://github.com/dry-rb/dry-testing-testing/compare/v1.0.0...v1.0.0)
 
 ## 1.0.0 2020-01-22
 
@@ -28,7 +28,7 @@ let's release it
 - All the features
 
 
-[Compare v0.2.2...v1.0.0](https://github.com/dry-rb/dry-testing/compare/v0.2.2...v1.0.0)
+[Compare v0.2.2...v1.0.0](https://github.com/dry-rb/dry-testing-testing/compare/v0.2.2...v1.0.0)
 
 ## 0.2.2 2020-01-15
 
@@ -49,7 +49,7 @@ How about another test?
 
 - test
 
-[Compare v0.2.1...v0.2.2](https://github.com/dry-rb/dry-testing/compare/v0.2.1...v0.2.2)
+[Compare v0.2.1...v0.2.2](https://github.com/dry-rb/dry-testing-testing/compare/v0.2.1...v0.2.2)
 
 ## 0.2.1 2020-01-10
 
@@ -60,7 +60,7 @@ One more test
 - just testing
 
 
-[Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-testing/compare/v0.2.0...v0.2.1)
+[Compare v0.2.0...v0.2.1](https://github.com/dry-rb/dry-testing-testing/compare/v0.2.0...v0.2.1)
 
 ## 0.2.0 2020-01-05
 
@@ -71,7 +71,7 @@ Another test
 - just one thing
 
 
-[Compare v0.1.0...v0.2.0](https://github.com/dry-rb/dry-testing/compare/v0.1.0...v0.2.0)
+[Compare v0.1.0...v0.2.0](https://github.com/dry-rb/dry-testing-testing/compare/v0.1.0...v0.2.0)
 
 ## 0.1.0 2020-01-01
 
