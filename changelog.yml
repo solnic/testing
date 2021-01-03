@@ -1,8 +1,12 @@
 ---
+- version: 1.0.4
+  date: '2021-01-03'
+  added:
+  - 'Release GH automation part 3'
 - version: 1.0.3
   date: '2021-01-03'
   added:
-  - 'Release GH automation part 2.'
+  - 'Release GH automation part 2'
 - version: 1.0.2
   date: '2021-01-03'
   added:
