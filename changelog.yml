@@ -1,4 +1,8 @@
 ---
+- version: 1.0.6
+  date: '2021-01-03'
+  added:
+  - 'Release GH automation part 5'
 - version: 1.0.5
   date: '2021-01-03'
   added:
