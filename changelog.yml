@@ -1,17 +1,17 @@
 ---
+- version: 1.0.2
+  date: '2021-01-03'
+  added:
+  - 'Release GH automation'
+- version: 1.0.1
+  date: '2020-02-10'
+  fixed:
+    - "all the things"
 - version: 1.0.1
   date: '2020-02-10'
   fixed:
     - "all the things"
 - version: 1.0.0
-  summary: let's release it
-  date: '2020-01-22'
-  fixed:
-  added: &1
-  - All the features
-  changed:
-- added: *1
-  version: 1.0.0
   date: '2020-01-22'
   summary: let's release it
 - version: 0.2.2
