@@ -2,7 +2,7 @@
 name: Devtools App
 on:
   repository_dispatch:
-    types: rubocop
+    types: [rubocop]
 jobs:
   rubocop:
     runs-on: ubuntu-latest
