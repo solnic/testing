@@ -10,5 +10,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
- 
+      - name: Run robocop
+        run: echo '{"sha":"${{ github.event.client_payload.sha }}"}' > rubocop-result.json
+      - name: Upload results
+        uses: actions/upload-artifact@v1
+        with:
+          name: rubocop-result.json
+          path: rubocop-result.json
