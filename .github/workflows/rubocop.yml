@@ -13,8 +13,6 @@ jobs:
     - name: Run rubocop
       id: rubocop
       uses: solnic/dt-actions/action-rubocop@main
-      with:
-        path: 'lib/ spec/ Rakefile Gemfile'
     - name: Store results
       uses: actions/upload-artifact@v2
       with:
