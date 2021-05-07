@@ -1,10 +1,8 @@
-name: "Action Hero / RuboCop"
-
+name: "RuboCop"
 on:
   push:
   pull_request:
   workflow_dispatch:
-
 jobs:
   Run:
     runs-on: ubuntu-latest
